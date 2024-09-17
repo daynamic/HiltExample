@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.akshat.hiltexample.database.DatabaseAdapter
 import com.akshat.hiltexample.database.DatabaseService
+import com.akshat.hiltexample.hilt.CallInterceptor
 import com.akshat.hiltexample.network.NetworkAdapter
 import com.akshat.hiltexample.network.NetworkService
 import dagger.hilt.android.AndroidEntryPoint
@@ -16,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var databaseAdapter: DatabaseAdapter
 
+    @CallInterceptor
     @Inject
     lateinit var networkService: NetworkService
  //   lateinit var networkAdapter: NetworkAdapter

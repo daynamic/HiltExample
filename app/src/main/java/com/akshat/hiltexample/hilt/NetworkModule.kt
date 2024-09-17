@@ -17,13 +17,33 @@ import dagger.hilt.android.components.ActivityComponent
     abstract fun bindNetworkAdapterImpl(networkAdapterImpl: MyAppNetworkAdapter): NetworkAdapter*/
 
 
-     @Provides
+     /*@Provides
      fun provideNetworkService(): NetworkService{
          return NetworkService.Builder()
              .host("google.com")
              .protocol("https")
              .build()
+     }*/
+
+     @CallInterceptor
+     @Provides
+     fun provideCallNetworkService(): NetworkService{
+         return NetworkService.Builder()
+             .host("google.com")
+             .protocol("https")
+             .interceptor(com.akshat.hiltexample.network.CallInterceptor())
+             .build()
      }
+
+    @ResponseInterceptor
+    @Provides
+    fun provideResponseNetworkService(): NetworkService{
+        return NetworkService.Builder()
+            .host("google.com")
+            .protocol("https")
+            .interceptor(com.akshat.hiltexample.network.ResponseInterceptor())
+            .build()
+    }
 
 
 }
