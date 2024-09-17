@@ -1,8 +1,9 @@
 package com.akshat.hiltexample.database
 
 import android.content.Context
-import android.util.Log
+
 import com.akshat.hiltexample.TAG
+import com.akshat.hiltexample.android.util.Log
 import dagger.hilt.android.qualifiers.ActivityContext
 import javax.inject.Inject
 
